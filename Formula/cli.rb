@@ -5,13 +5,13 @@
 class Cli < Formula
   desc "Extensible CLI to easily manage the authorization of your data sources."
   homepage "https://raito.io"
-  version "0.50.0"
+  version "0.51.0"
   license "Apache v2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/raito-io/cli/releases/download/v0.50.0/raito-0.50.0-darwin_amd64.tar.gz"
-      sha256 "c731c41367b4c9dfd6f45999bd87db168472ae9a747135389a0322c820911934"
+      url "https://github.com/raito-io/cli/releases/download/v0.51.0/raito-0.51.0-darwin_amd64.tar.gz"
+      sha256 "b5f9648f92f9e52caf90103a5183a935e24188aa57806763681a83d3257d772f"
 
       def install
         bin.install "raito"
@@ -21,8 +21,8 @@ class Cli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/raito-io/cli/releases/download/v0.50.0/raito-0.50.0-darwin_arm64.tar.gz"
-      sha256 "dfd09cb8779f6d16c52b7787f7632b2ad8fb73b5449f991375a96dda7dd82866"
+      url "https://github.com/raito-io/cli/releases/download/v0.51.0/raito-0.51.0-darwin_arm64.tar.gz"
+      sha256 "84ff1565daa363ae3c7010173f7735ba86835ff71dfeb8567507e3b6e932a3f0"
 
       def install
         bin.install "raito"
@@ -35,8 +35,8 @@ class Cli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/raito-io/cli/releases/download/v0.50.0/raito-0.50.0-linux_arm64.tar.gz"
-      sha256 "c8205e8ebd430b84baf2ebf98223baf1584faff28f82248e4efbc5c9f10eba57"
+      url "https://github.com/raito-io/cli/releases/download/v0.51.0/raito-0.51.0-linux_arm64.tar.gz"
+      sha256 "c06390bb1497c7d709a12c0d2b89d54f6c854faef483e5738a2049afb8e4c70e"
 
       def install
         bin.install "raito"
@@ -46,8 +46,8 @@ class Cli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/raito-io/cli/releases/download/v0.50.0/raito-0.50.0-linux_amd64.tar.gz"
-      sha256 "cef687f04c7f87a9fa006cfbf73b7382d5df07291ae04962844f90ede845953f"
+      url "https://github.com/raito-io/cli/releases/download/v0.51.0/raito-0.51.0-linux_amd64.tar.gz"
+      sha256 "2b02d448521b90d140b75a5f90fa435e5202db568525fb8c6519f82acb327c2a"
 
       def install
         bin.install "raito"
