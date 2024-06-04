@@ -5,13 +5,13 @@
 class Cli < Formula
   desc "Extensible CLI to easily manage the authorization of your data sources."
   homepage "https://raito.io"
-  version "0.65.1"
+  version "0.65.2"
   license "Apache v2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/raito-io/cli/releases/download/v0.65.1/raito-0.65.1-darwin_amd64.tar.gz"
-      sha256 "113888e1bf3f6fb7f3c97cab1c712592ef575835fdb235986c86946ad9f33a16"
+    on_intel do
+      url "https://github.com/raito-io/cli/releases/download/v0.65.2/raito-0.65.2-darwin_amd64.tar.gz"
+      sha256 "ebe6edc4b5a98202b67f0eec9f7a3e1dd7fea66939b518af805e93bd5f772acd"
 
       def install
         bin.install "raito"
@@ -20,9 +20,9 @@ class Cli < Formula
         fish_completion.install "completions/raito.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/raito-io/cli/releases/download/v0.65.1/raito-0.65.1-darwin_arm64.tar.gz"
-      sha256 "8b714af234677a7745c79ff6dd9126ceb9e71dc8a03e74904e35c4c524c6c691"
+    on_arm do
+      url "https://github.com/raito-io/cli/releases/download/v0.65.2/raito-0.65.2-darwin_arm64.tar.gz"
+      sha256 "2554fe74a1a773900d63ad445416d6d33c546067ad058dc4a88d24527069e52e"
 
       def install
         bin.install "raito"
@@ -34,26 +34,30 @@ class Cli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/raito-io/cli/releases/download/v0.65.1/raito-0.65.1-linux_amd64.tar.gz"
-      sha256 "8338ba3ef9eeacce2ff3c58cf02bc0de9cee67c1800bc8ed6b48a6e4da09cc10"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/raito-io/cli/releases/download/v0.65.2/raito-0.65.2-linux_amd64.tar.gz"
+        sha256 "bc1d8569f922c64c970c7a1baccc47f3fb1e9a174f4b904abb5f65b640e79404"
 
-      def install
-        bin.install "raito"
-        bash_completion.install "completions/raito.bash" => "raito"
-        zsh_completion.install "completions/raito.zsh" => "_raito"
-        fish_completion.install "completions/raito.fish"
+        def install
+          bin.install "raito"
+          bash_completion.install "completions/raito.bash" => "raito"
+          zsh_completion.install "completions/raito.zsh" => "_raito"
+          fish_completion.install "completions/raito.fish"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/raito-io/cli/releases/download/v0.65.1/raito-0.65.1-linux_arm64.tar.gz"
-      sha256 "549fc1f89ae9ca0902b6c488f2fe703dd954823e082b51819b7842f880227ab2"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/raito-io/cli/releases/download/v0.65.2/raito-0.65.2-linux_arm64.tar.gz"
+        sha256 "04a6d686712f366eefdb589c5a8ca8994a05df866b075d0fcd74f105562f8753"
 
-      def install
-        bin.install "raito"
-        bash_completion.install "completions/raito.bash" => "raito"
-        zsh_completion.install "completions/raito.zsh" => "_raito"
-        fish_completion.install "completions/raito.fish"
+        def install
+          bin.install "raito"
+          bash_completion.install "completions/raito.bash" => "raito"
+          zsh_completion.install "completions/raito.zsh" => "_raito"
+          fish_completion.install "completions/raito.fish"
+        end
       end
     end
   end
