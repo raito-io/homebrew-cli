@@ -11,7 +11,7 @@ class Cli < Formula
   on_macos do
     on_intel do
       url "https://github.com/raito-io/cli/releases/download/v0.65.2/raito-0.65.2-darwin_amd64.tar.gz"
-      sha256 "ebe6edc4b5a98202b67f0eec9f7a3e1dd7fea66939b518af805e93bd5f772acd"
+      sha256 "fb6462378dd27349389a663859d5951c61e4d2ce20645de316b7d801d806dbde"
 
       def install
         bin.install "raito"
@@ -22,7 +22,7 @@ class Cli < Formula
     end
     on_arm do
       url "https://github.com/raito-io/cli/releases/download/v0.65.2/raito-0.65.2-darwin_arm64.tar.gz"
-      sha256 "2554fe74a1a773900d63ad445416d6d33c546067ad058dc4a88d24527069e52e"
+      sha256 "0fd3d2bbe9578fd7eb98935c6dbb5ef2b4feba9f78c2bb2c3ab42425f8031a60"
 
       def install
         bin.install "raito"
@@ -37,7 +37,7 @@ class Cli < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/raito-io/cli/releases/download/v0.65.2/raito-0.65.2-linux_amd64.tar.gz"
-        sha256 "bc1d8569f922c64c970c7a1baccc47f3fb1e9a174f4b904abb5f65b640e79404"
+        sha256 "73ca2f02abf523ee4ab8d744e1956428116fa4b126152f2c3e0badaa4817c50f"
 
         def install
           bin.install "raito"
@@ -50,7 +50,7 @@ class Cli < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/raito-io/cli/releases/download/v0.65.2/raito-0.65.2-linux_arm64.tar.gz"
-        sha256 "04a6d686712f366eefdb589c5a8ca8994a05df866b075d0fcd74f105562f8753"
+        sha256 "8fbd25e8c98607422c18b58b76c1f561e2db13d8203f2625669c9cdfdce6f028"
 
         def install
           bin.install "raito"
